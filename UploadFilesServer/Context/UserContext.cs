@@ -11,5 +11,5 @@ namespace UploadFilesServer.Context
         }
 
         public DbSet<User>? Users { get; set; }
-    
+    }
 }
