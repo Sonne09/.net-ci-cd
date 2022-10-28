@@ -31,3 +31,6 @@ jobs:
         with:
           name: build
           path: /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/
+
+      - name: Zip artifact for deployment
+        run: zip build.zip ./* -r
