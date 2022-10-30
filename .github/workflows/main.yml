@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dotnet tools
         run: |
-          dotnet tool install -g BundlerMinifier.Core
+          dotnet tool install -g BundlerMinifier.Core -v 6.0.x
 
       - name: Restore dependencies
         run: dotnet restore
