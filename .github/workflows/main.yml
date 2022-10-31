@@ -49,6 +49,5 @@ jobs:
 
       - name: Publish the Code
         run: |
-          sudo chmod +x /home/ubuntu/host.sh
-          ./home/ubuntu/host.sh
+          chmod +x /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
         shell: bash
