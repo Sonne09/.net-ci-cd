@@ -53,5 +53,5 @@ jobs:
         shell: bash
 
       - name: Call a Bash Script
-        run:  /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
+        run: sh ./home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
         shell: bash
