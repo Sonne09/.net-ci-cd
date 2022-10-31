@@ -53,5 +53,10 @@ jobs:
         shell: bash
 
       - name: Call a Bash Script
-        run: sh /home/ubuntu/host.sh
+        run: sh /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
         shell: bash
+
+        env:
+          SSH_PRIVATE_KEY: ${ { secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${ { secrets.SSH_HOST }}
+          REMOTE_USER: ${ { secrets.SSH_USER }}
