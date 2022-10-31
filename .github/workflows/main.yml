@@ -49,6 +49,6 @@ jobs:
 
       - name: Publish the Code
         run: |
-          sudo chmod +x ./home/ubuntu/host.sh
+          sudo chmod +x /home/ubuntu/host.sh
           ./home/ubuntu/host.sh
         shell: bash
