@@ -50,3 +50,4 @@ jobs:
       - name: Publish the Code
         run: |
           sudo ./home/ubuntu/host.sh
+        shell: bash
