@@ -53,5 +53,5 @@ jobs:
         shell: bash
 
       - name: Call a Bash Script
-        run: sh ./home/ubuntu/host.sh
+        run: sh /home/ubuntu/host.sh
         shell: bash
