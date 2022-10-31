@@ -52,3 +52,5 @@ jobs:
           chmod +x /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
           "/home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh"
         shell: bash
+        env:
+          ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
