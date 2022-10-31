@@ -47,7 +47,5 @@ jobs:
       - name: Deploy with rsync
         run: |
          rsync -avz /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/All_Updates/Oct31/test/
-
-         whoami
-         ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}: sh /tmp/host.sh
+         ssh -i ${{ secrets.SSH_PRIVATE_KEY }}  ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '/home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh'
         shell: bash
