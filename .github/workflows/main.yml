@@ -33,7 +33,7 @@ jobs:
           path: /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/
 
       - name: Zip artifact for deployment
-        run: zip -r ./build.zip /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/*
+        run: zip -j ./build.zip /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* -r
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
@@ -46,3 +46,7 @@ jobs:
 
       - name: Deploy with rsync
         run: rsync -avz /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/All_Updates/Oct31/test/
+
+      - name: Publish the Code
+        run: |
+          sudo ./home/ubuntu/host.sh
