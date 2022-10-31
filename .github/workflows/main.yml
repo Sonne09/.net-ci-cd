@@ -45,18 +45,10 @@ jobs:
         run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
 
       - name: Deploy with rsync
-        run: rsync -avz /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/All_Updates/Oct31/test/
-
-      - name: Publish the Code
         run: |
-          chmod +x /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
-        shell: bash
+         rsync -avz /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/All_Updates/Oct31/test/
 
-      - name: Call a Bash Script
-        run: sh /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
-        shell: bash
+         chmod +x /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
 
-        env:
-          SSH_PRIVATE_KEY: ${ { secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${ { secrets.SSH_HOST }}
-          REMOTE_USER: ${ { secrets.SSH_USER }}
+         run: sh /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
+        shell: bash
