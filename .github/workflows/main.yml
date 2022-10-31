@@ -54,3 +54,4 @@ jobs:
 
       - name: Call a Bash Script
         run:  /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
+        shell: bash
