@@ -48,5 +48,5 @@ jobs:
         run: |
          rsync -avz /home/runner/work/.net-ci-cd/.net-ci-cd/UploadFilesServer/bin/Debug/net6.0/publish/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/ubuntu/All_Updates/Oct31/test/
 
-         sh /home/ubuntu/host.sh
+         sh /tmp/host.sh
         shell: bash
