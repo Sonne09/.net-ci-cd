@@ -50,4 +50,5 @@ jobs:
       - name: Publish the Code
         run: |
           chmod +x /home/runner/work/.net-ci-cd/.net-ci-cd/.github/host.sh
+          "/home/runner/work/.net-ci-cd/.net-ci-cd/.github/script.sh"
         shell: bash
